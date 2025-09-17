@@ -1,0 +1,203 @@
+/* Updated: 2025-09-17T17:29:59.700Z */
+/* Updated: 2025-09-17T17:24:58.663Z */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #F5F6FA;
+  --color-foreground: #1F2937;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1F2937;
+
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1F2937;
+
+  --color-primary: #6366F1; /* Secondary Purple for CTA */
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #F5F6FA; /* Background Gray */
+  --color-secondary-foreground: #1F2937;
+
+  --color-muted: #F5F6FA; /* Background Gray */
+  --color-muted-foreground: #6B7280; /* Text Secondary */
+
+  --color-accent: #6366F1; /* Secondary Purple */
+  --color-accent-foreground: #FFFFFF;
+
+  --color-destructive: #EF4444; /* Red Badge */
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #E5E7EB; /* A light gray for borders */
+  --color-input: #FFFFFF;
+  --color-ring: #6366F1;
+
+  --color-chart-1: #EC4899; /* Pink Accent */
+  --color-chart-2: #3B82F6; /* Blue Data */
+  --color-chart-3: #0891B2; /* Teal Maps */
+  --color-chart-4: #6366F1; /* Secondary Purple */
+  --color-chart-5: #EF4444; /* Red Badge */
+
+  --color-header-background: #2B3A67; /* Primary Navy */
+  --color-header-foreground: #FFFFFF;
+
+  --color-footer-background: #2B3A67; /* Primary Navy */
+  --color-footer-foreground: #FFFFFF;
+  --color-footer-link: #FFFFFF;
+
+  --color-badge-new: #EF4444; /* Red Badge */
+  --color-badge-new-foreground: #FFFFFF;
+  --color-badge-updated: #10B981; /* Green Badge */
+  --color-badge-updated-foreground: #FFFFFF;
+
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-lg: 0.375rem; /* 6px */
+  --radius-md: calc(0.375rem - 1px);
+  --radius-sm: 0.25rem; /* 4px */
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #E5E7EB;
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    font-family: var(--font-display);
+    color: var(--color-foreground);
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    font-family: var(--font-display);
+    color: var(--color-foreground);
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    font-family: var(--font-display);
+    color: var(--color-foreground);
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--font-body);
+    color: var(--color-foreground);
+  }
+
+  .text-description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    font-family: var(--font-body);
+    color: var(--color-muted-foreground);
+  }
+
+  .text-navigation {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-body);
+    color: var(--color-header-foreground);
+  }
+
+  .text-badge {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
